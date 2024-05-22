@@ -1,0 +1,95 @@
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(246, 243, 243);
+    gap: 20px;
+    background-color: rgb(43, 11, 74);
+    box-shadow: 10px -10px 15px rgb(129, 86, 170);
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.productItem {
+    display: flex;
+    width: 90%;
+    border: 2px solid rgb(239, 235, 235);
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 8px grey;
+    background-color: black;
+}
+
+.productImg img{
+    height: 300px;
+    width: 350px;
+    margin-right: 20px;
+}
+
+.productInfo{
+    /* border: 1px solid yellow; */
+    width: 68%;
+    height: 100%;
+}
+
+.name{
+    text-shadow: 2px 2px 5px grey;
+    box-shadow: 2px 2px 5px rgb(129, 86, 170);
+    padding-bottom: 5px;
+}
+
+.price, .quantity{
+    box-shadow: 2px 2px 5px grey;
+    padding-bottom: 5px;
+}
+
+.priceInfo{
+    /* border: 1px solid yellow; */
+    width: 28%;
+    height: 100%;
+}
+
+.priceInfo .price{
+    text-align: center;
+    font-weight: 700;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 68%;
+    /* border: 1px solid yellow; */
+    padding: 10px;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+.btnGrp{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btnGrp .btn{
+    padding: 5px;
+    background-color: rgb(73, 16, 126);
+    cursor: pointer;
+}
+
+.btnGrp .btn a,
+.addToCartBtn{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.description{
+    margin-top: 20px;
+}

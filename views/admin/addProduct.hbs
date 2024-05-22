@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Product</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/addproduct.css">
+</head>
+
+<body>
+    {{>navbar isAdmin=isAdmin cartCnt=cartCnt}}
+    <div class="container">
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form action="/admin/add-product" method="POST">
+            <h3>Add-Product Here</h3>
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter Product Name" class="name"> <br>
+            <label for="price">Price:</label>
+            <input type="text" name="price" placeholder="Enter Product Price" class="price"> <br>
+            <label for="imageUrl">Image-Url:</label>
+            <input type="text" name="imageUrl" placeholder="Enter Product Image-Url" class="imageUrl"> <br>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" rows="5" cols="44">...Enter Product Description</textarea>
+            <button class="addBtn" type="submit">Add Product</button>
+        </form>
+    </div>
+    <button class="logoutBtn">
+        <a href="/logout">Logout</a>
+    </button>
+</body>
+
+</html>

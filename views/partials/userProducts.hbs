@@ -1,0 +1,27 @@
+{{#each this.products as |product|}}
+<div class="productItem">
+    <div class="productImg">
+        <img src="{{product.imageUrl}}" alt="">
+    </div>
+    <div class="info">
+        <div class="productInfo">
+            <h2 class="name">
+                {{product.name}}
+            </h2>
+            <ul class="description">
+                <li>{{product.description}}</li>
+            </ul>
+        </div>
+        <div class="priceInfo">
+            <div class="price">
+                $ {{product.price}}
+            </div>
+            <div class="btnGrp">
+                <button class="btn">
+                    <a href="/shop/details?id={{product._id}}">Product Details</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}

@@ -1,0 +1,31 @@
+<div class="cartItem">
+    {{#each this.products as |product|}}
+    <div class="newCartItem">
+        <div class="itemDetails">
+            <div class="cartItemImg">
+                <img src="{{product.id.imageUrl}}" alt="">
+            </div>
+            <div class="cartItemDesc">
+                <div class="name">{{product.id.name}}</div>
+                <div class="quantity">
+                    Quantity : 
+                    <button productId = "{{product.id._id}}" class="qty decrease">➖</button>
+                    <span class="qtyNumber">{{product.quantity}}</span>
+                    <button productId = "{{product.id._id}}" class="qty increase">➕</button>
+                </div>
+                <div class="price">${{product.id.price}}</div>
+                <div class="btnGrp">
+                    <button productId={{product.id._id}} class="btn deleteBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+    <div class="btnGrp1">
+        <button class="btn total">Total Price : ${{this.totalPrice}}</button>
+        <button class="payment btn">Proceed to Pay</button>
+    </div>
+
+
+</div>

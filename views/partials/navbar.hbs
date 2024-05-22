@@ -1,0 +1,25 @@
+<nav class="navBar">
+    <div class="navItem navItem-1">
+        <img src="https://minio.codingblocks.com/amoeba/OnlineLogo2020.svg" alt="logo">
+        <a class="navLink" href="#">Home</a>
+        <a class="navLink" href="../shop/products">Products</a>
+        <a class="navLink" href="/shop/cart">
+            <span class="cartName">
+                Cart
+                {{#if this.cartCnt}}
+                <div class="cartCnt">{{this.cartCnt}}</div>
+                {{else}} 
+                <div class="cartCnt">0</div>
+                {{/if}}
+            </span>
+        </a>
+        <a class="navLink" href="../profile/">Profile</a>
+        {{#if this.isAdmin}}
+        <a class="navLink" href="../admin/add-product">Add-Products</a>
+        <a class="navLink" href="../admin/products">Admin Products</a>
+        {{/if}}
+    </div>
+    <div class="navItem navItem-2">
+        <input type="text" placeholder="Search for products...">
+    </div>
+</nav>

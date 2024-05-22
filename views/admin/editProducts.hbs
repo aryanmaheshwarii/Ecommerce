@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit-Product</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/addproduct.css">
+</head>
+
+<body>
+    {{>navbar isAdmin=isAdmin cartCnt=cartCnt}}
+
+    <div class="container">
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="image" style="margin-top: 230px;">
+            <h3 style="color: white; margin: 10px 0">Product To Edit ...</h3>
+            <img style="height: 300px; width: 350px;" src="{{product.imageUrl}}" alt="">
+        </div>
+        <form action="/admin/edit?id={{product.id}}" method="POST">
+            <h3>Edit-Product Here</h3>
+            <label for="name">Name:</label>
+            <input value="{{product.name}}" type="text" name="name" class="name"> <br>
+            <label for="price">Price:</label>
+            <input value="{{product.price}}" type="text" name="price" class="price"> <br>
+            <label for="imageUrl">Image-Url:</label>
+            <input value="{{product.imageUrl}}" type="text" name="imageUrl" class="imageUrl"> <br>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" rows="5" cols="44">{{product.description}}</textarea>
+            <button class="addBtn" type="submit">Edit Product</button>
+        </form>
+    </div>
+
+    <button class="logoutBtn">
+        <a href="/logout">Logout</a>
+    </button>
+</body>
+
+</html>
