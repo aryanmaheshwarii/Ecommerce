@@ -30,6 +30,7 @@
     height: 55px;
     background-color: rgb(56, 12, 97);;
     margin-right: 15px;
+    border-radius: 50%;
 }
 
 .navItem {
@@ -51,7 +52,6 @@
 
 .navLink {
     margin: 0 10px;
-    text-shadow: 3px 3px 2px rgb(161, 134, 235);
 }
 
 .navLink:link,

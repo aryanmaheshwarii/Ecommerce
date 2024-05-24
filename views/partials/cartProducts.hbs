@@ -8,7 +8,7 @@
             <div class="cartItemDesc">
                 <div class="name">{{product.id.name}}</div>
                 <div class="quantity">
-                    Quantity : 
+                    <span class="qt">Quantity :</span> 
                     <button productId = "{{product.id._id}}" class="qty decrease">➖</button>
                     <span class="qtyNumber">{{product.quantity}}</span>
                     <button productId = "{{product.id._id}}" class="qty increase">➕</button>
@@ -23,7 +23,7 @@
     {{/each}}
 
     <div class="btnGrp1">
-        <button class="btn total">Total Price : ${{this.totalPrice}}</button>
+        <button class="btn total">Total Price : $ {{this.totalPrice}}</button>
         <button class="payment btn">Proceed to Pay</button>
     </div>
 

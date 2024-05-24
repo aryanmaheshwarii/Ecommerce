@@ -26,7 +26,7 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://localhost:5000/login/auth/facebook/callback"
 },
     async function (accessToken, refreshToken, profile, cb) {
-        // console.log(profile)
+        console.log('profile',profile);
         try {
             let user = await User.findOne({
                 fbID: profile.id
@@ -53,7 +53,7 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:5000/login/auth/google/callback"
 },
     async function (accessToken, refreshToken, profile, cb) {
-        // console.log(profile)
+        console.log(profile)
         try {
             let user = await User.findOne({
                 googleID: profile.id

@@ -4,7 +4,7 @@ const saltRounds = 10;
 
 module.exports.getlogin = (req, res) => {
     if (req.user) {
-        res.redirect('/profile');
+        res.redirect('/home');
     }
     res.render('login')
 }

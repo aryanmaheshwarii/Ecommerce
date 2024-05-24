@@ -39,6 +39,7 @@ app.use(isLoggedIn) // agar user logged in hai tbhi vo aage jayega.
 app.use('/profile', require('./routes/profile'))
 app.use('/admin', isAdmin, require('./routes/admin'))
 app.use('/shop', require('./routes/shop'))
+app.use('/home', require('./routes/home'));
 
 app.get('/logout', function (req, res, next) {
   req.logout(function (err) {

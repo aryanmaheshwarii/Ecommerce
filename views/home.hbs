@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+<body>
+    {{> navbar isAdmin=isAdmin cartCnt=cartCnt }}
+    <div class="container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="hero" style="background-image: url('/images/banner-1.jpg');">
+                        <div class="desc">
+                            <span class="line-1">Trending Item</span> <br>
+                            <span class="line-2">WOMEN'S LATEST <br> FASHION SALE</span> <br>
+                            <span class="line-3">starting at $ <span>20</span>.00</span> <br>
+                            <button>
+                                <a href="/home/women-sale">Shop now</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hero" style="background-image: url('/images/banner-2.jpg');">
+                        <div class="desc">
+                            <span class="line-1">Trending Accessories</span> <br>
+                            <span class="line-2">MODERN <br> SUNGLASSES</span> <br>
+                            <span class="line-3">starting at $ <span>15</span>.00</span> <br>
+                            <button>
+                                <a href="/home/men-sale">Shop now</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hero" style="background-image: url('/images/banner-3.jpg');">
+                        <div class="desc">
+                            <span class="line-1">Sale Offer</span> <br>
+                            <span class="line-2">NEW FASHION<br> SUMMER SALE</span> <br>
+                            <span class="line-3">starting at $ <span>29</span>.00</span> <br>
+                            <button>
+                                <a href="/home/women-sale">Shop now</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <div class="sections">
+            <div class="section section-1">
+                <h3>CATEGORY</h3>
+                <div class="clothes">
+                    <div class="cloth">
+                        <img src="/images/icons/dress.svg" alt="">
+                        <span>clothes</span>
+                    </div>
+                    <div class="add">➕</div>
+                </div>
+
+                <div class="clothes">
+                    <div class="cloth">
+                        <img src="/images/icons/shoes.svg" alt="">
+                        <span>Footwear</span>
+                    </div>
+                    <div class="add">➕</div>
+                </div>
+
+                <div class="clothes">
+                    <div class="cloth">
+                        <img src="/images/icons/jewelry.svg" alt="">
+                        <span>Jewelry</span>
+                    </div>
+                    <div class="add">➕</div>
+                </div>
+            </div>
+
+            <div class="section section-2">
+
+            </div>
+        </div>
+
+        <button class="logoutBtn">
+            <a href="/logout">Logout</a>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+</html>

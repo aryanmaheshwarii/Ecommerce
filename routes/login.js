@@ -11,7 +11,7 @@ router.get('/', loginController.getlogin);
 router.post('/',
     MyPassport.authenticate('local', { failureRedirect: '/login' }),
     function (req, res) {
-        res.redirect('/profile');
+        res.redirect('/home');
     });
 
 router.get('/facebook',
@@ -21,7 +21,7 @@ router.get('/auth/facebook/callback',
     MyPassport.authenticate('facebook', { failureRedirect: '/login' }),
     function (req, res) {
         // Successful authentication, redirect home.
-        res.redirect('/profile');
+        res.redirect('/home');
     });
 
 router.get('/google',
@@ -31,7 +31,7 @@ router.get('/auth/google/callback',
     MyPassport.authenticate('google', { failureRedirect: '/login' }),
     function (req, res) {
         // Successful authentication, redirect home.
-        res.redirect('/profile');
+        res.redirect('/home');
     });
 
 module.exports = router;

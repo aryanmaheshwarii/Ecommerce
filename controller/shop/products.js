@@ -128,7 +128,11 @@ module.exports.getDecQty = async (req, res, next) => {
             let products = user.cart.products;
             let totalPrice = 0;
             products.forEach(element => {
-                if (String(element.id._id) === productId) element.quantity -= 1;
+                if (String(element.id._id) === productId) {
+                    element.quantity -= 1;
+                    // if (element.quantity <= 0)
+                    //     element.quantity = 0;
+                }
             });
             products.forEach(element => {
                 totalPrice += (element.id.price * element.quantity);

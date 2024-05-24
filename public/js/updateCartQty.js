@@ -7,7 +7,7 @@ cartItem.addEventListener('click', (ev) => {
     let sign = item.innerText;
     let productId = item.getAttribute('productId');
     let price = document.querySelector('.total');
-    let qtyNumber = ev.target.parentElement.children[1];
+    let qtyNumber = ev.target.parentElement.children[2];
     // console.log(qtyNumber);
     if (sign === '➕') {
         // update the qty...

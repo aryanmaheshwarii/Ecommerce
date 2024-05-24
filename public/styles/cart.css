@@ -1,20 +1,28 @@
 .itemDetails{
     display: flex;
     align-items: center;
+    width: 90%;
+    margin: 0px auto;
 }
 
 .cartItem{
     display: flex;
     flex-direction: column;
-    gap: 23px;
+    gap: 20px;
 }
 
 .newCartItem{
-    border: 2px solid white;
-    margin: 20px;
-    padding: 15px;
-    background-color: black;
-    box-shadow: 5px -5px 10px rgb(177, 54, 253);
+    border: 1px solid grey;
+    margin: 10px auto;
+    background-color: white;
+    color: #2e2e2e;
+    border-radius: 10px;
+    border: 0.5px solid grey;
+    width: 85%;
+}
+
+.newCartItem:hover{
+    box-shadow: 3px 3px 12px grey;
 }
 
 .cartItemImg img{
@@ -27,11 +35,23 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    /* border : 2px solid white; */
-    box-shadow: 5px -5px 5px rgb(228, 172, 250);
     padding: 20px;
     margin: 0 auto;
     width: 50%;
+}
+
+.cartItemDesc .name{
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.cartItemDesc .price{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.qt {
+    color: grey;
 }
 
 .deleteBtn, .btn{
@@ -45,23 +65,24 @@
     align-items: center;
     justify-content: space-around;
     padding-bottom: 20px;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .btnGrp1 .total{
-    background-color: black;
+    background-color: rgb(58, 11, 101);
     padding: 8px;
     width: 65%;
-    border: 2px solid whitesmoke;
-    box-shadow: 5px -5px 6px rgb(117, 36, 171);
+    border-radius: 8px;
 }
 
 .btnGrp1 .payment{
     width: 23%;
-    background-color: black;
+    background-color: rgb(62, 13, 108);
     padding: 8px;
-    border: 2px solid whitesmoke;
-    box-shadow: 5px -5px 6px rgb(117, 36, 171);
     color: white;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .qty{
@@ -69,4 +90,6 @@
     border: 1px solid white;
     margin: 0 5px;
     cursor: pointer;
+    background-color: rgb(238, 237, 237);
+    padding: 1px;
 }
