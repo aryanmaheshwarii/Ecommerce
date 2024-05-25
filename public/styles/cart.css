@@ -109,3 +109,15 @@
     flex-direction: row;
     width: 100%;
 }
+
+.footerPartial{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.container{
+    /* margin-bottom: 165px; */
+    /* flex: 1 0 auto; */
+}
