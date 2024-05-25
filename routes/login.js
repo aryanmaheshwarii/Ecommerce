@@ -1,9 +1,14 @@
 const path = require('path');
 const express = require('express');
+const app = express();
 const router = express.Router();
 const MyPassport = require('../auth/passport');
-
 const loginController = require('../controller/loginController')
+// Require the connect-flash package
+const flash = require('connect-flash');
+
+// Initialize connect-flash
+app.use(flash());
 
 router.get('/', loginController.getlogin);
 
@@ -11,6 +16,8 @@ router.get('/', loginController.getlogin);
 router.post('/',
     MyPassport.authenticate('local', { failureRedirect: '/login' }),
     function (req, res) {
+        console.log("hiii")
+        req.flash('success')
         res.redirect('/home');
     });
 

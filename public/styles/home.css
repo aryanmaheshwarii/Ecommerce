@@ -101,7 +101,7 @@ html, body {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 23px;
+    gap: 20px;
 }
 
 .productItem{
