@@ -15,6 +15,17 @@ module.exports.getHome = async (req, res, next) => {
     }
 }
 
-module.exports.getWomenSale = (req, res, next) => {
-    res.send('ok');
+module.exports.getWomenSale = async (req, res, next) => {
+    // res.send('ok');
+    try{
+        let products = await Product.find({ name: { $regex: 'women', $options: 'i' } })
+        console.log(products)
+        res.render('shop/carousel', {
+            products
+        });
+    }
+
+    catch(err){
+        console.log(err);
+    }
 }

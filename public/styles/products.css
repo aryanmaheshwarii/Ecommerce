@@ -19,6 +19,8 @@ body{
 
 .productItem {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 85%;
     border: 0.5px solid rgb(165, 162, 162);
     border-radius: 10px;
