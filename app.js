@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const path = require('path');
 require('dotenv').config();
 const mongoose = require('mongoose')
@@ -40,7 +40,7 @@ app.use('/profile', require('./routes/profile'))
 app.use('/admin', isAdmin, require('./routes/admin'))
 app.use('/shop', require('./routes/shop'))
 app.use('/home', require('./routes/home'));
-
+app.get('/search',require('./routes/shop'))
 app.get('/logout', function (req, res, next) {
   req.logout(function (err) {
     if (err) { return next(err); }

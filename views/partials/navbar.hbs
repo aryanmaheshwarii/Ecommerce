@@ -1,6 +1,7 @@
 <nav class="navBar">
     <div class="navItem navItem-1">
-        <img src="https://img.freepik.com/premium-vector/creative-abstract-modern-ecommerce-logo-design-colorful-gradient-online-shopping-logo-template_467913-985.jpg?size=626&ext=jpg&ga=GA1.1.1157377652.1715839980&semt=ais_user" alt="logo">
+        <img src="https://img.freepik.com/premium-vector/creative-abstract-modern-ecommerce-logo-design-colorful-gradient-online-shopping-logo-template_467913-985.jpg?size=626&ext=jpg&ga=GA1.1.1157377652.1715839980&semt=ais_user"
+            alt="logo">
         <a class="navLink" href="/home/">Home</a>
         <a class="navLink" href="../shop/products">Products</a>
         <a class="navLink" href="/shop/cart">
@@ -8,7 +9,7 @@
                 Cart
                 {{#if this.cartCnt}}
                 <div class="cartCnt">{{this.cartCnt}}</div>
-                {{else}} 
+                {{else}}
                 <div class="cartCnt">0</div>
                 {{/if}}
             </span>
@@ -20,6 +21,9 @@
         {{/if}}
     </div>
     <div class="navItem navItem-2">
-        <input type="text" placeholder="Search for products...">
+        <form action="/search" method="GET">
+            <input type="text" placeholder="Search for products..." name="query">
+            <button type="submit">Search</button>
+        </form>
     </div>
 </nav>

@@ -182,3 +182,19 @@ module.exports.getDelete = async (req, res, next) => {
             console.log(err);
         })
 }
+
+module.exports.getSearch = async (req, res, next) => {
+    console.log("checking")
+    const query = req.query.query;
+    console.log(query)
+    try {
+        // Perform search in MongoDB
+        const results = await Product.find({ name: { $regex: query, $options: 'i' } });
+        console.log(results)
+        // Render search results page using Handlebars template
+        res.render('shop/searchResults', { products: results }); // Assuming you have a searchResults.hbs template
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+}
