@@ -13,5 +13,6 @@ router.get('/cart', productController.getCart);
 router.get('/increaseQty', productController.getIncQty);
 router.get('/decreaseQty', productController.getDecQty);
 router.get('/delete', productController.getDelete);
+router.get('/search', productController.getSearch);
 
 module.exports = router;
