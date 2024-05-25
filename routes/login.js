@@ -16,8 +16,6 @@ router.get('/', loginController.getlogin);
 router.post('/',
     MyPassport.authenticate('local', { failureRedirect: '/login' }),
     function (req, res) {
-        console.log("hiii")
-        req.flash('success')
         res.redirect('/home');
     });
 
