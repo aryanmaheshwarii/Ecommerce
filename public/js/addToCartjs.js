@@ -11,7 +11,23 @@ addToCartBtn.addEventListener('click', (ev) => {
             x++;
             cartCnt.innerText = x;
             console.log('item added successfully...');
+            showPopup('Item added successfully');
         }).catch((err) => {
             console.log(err);
         })
 })
+
+function showPopup(message) {
+    // Create popup element
+    let popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.textContent = message;
+
+    // Append popup to the body
+    document.body.appendChild(popup);
+
+    // Remove popup after 2 seconds
+    setTimeout(() => {
+        popup.remove();
+    }, 2000);
+}
