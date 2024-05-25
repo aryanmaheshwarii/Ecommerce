@@ -5,6 +5,7 @@
     padding: 0;
     font-family: "Lato", sans-serif;
     font-style: normal;
+    box-sizing: border-box;
 }
 
 .navBar {
@@ -24,6 +25,7 @@
     font-size: 17px;
     overflow: hidden;
     z-index: 15;
+    height: 75px;
 }
 
 .navItem img {
@@ -100,3 +102,26 @@
     background-color: rgba(121, 13, 229, 0.954);
     border-radius: 50%;
 }
+
+.navItem-2 form{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.navItem-2 form input{
+    width: 90%;
+    border: none;
+}
+
+.navItem-2 form button{
+    width: 4%;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 30px;
+}
+

@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .itemDetails{
     display: flex;
     align-items: center;
@@ -78,6 +84,7 @@
     padding: 8px;
     width: 65%;
     border-radius: 8px;
+    margin-top: 20px;
 }
 
 .btnGrp1 .payment{
