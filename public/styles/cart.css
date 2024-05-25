@@ -110,14 +110,23 @@
     width: 100%;
 }
 
-.footerPartial{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: fit-content;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.container{
-    /* margin-bottom: 165px; */
-    /* flex: 1 0 auto; */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.container {
+    flex: 1; /* to take up the remaining vertical space */
+}
+
+.footerPartial {
+    flex-shrink: 0; /* do not shrink the footer */
 }

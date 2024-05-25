@@ -13,15 +13,17 @@
 </head>
 
 <body>
-    {{>navbar isAdmin=isAdmin cartCnt=cartCnt totalPrice=totalPrice}}
-    <div class="container">
-        <div class="productDetails">
-            {{>cartProducts products=products totalPrice=totalPrice}}
+    <div class="wrapper">
+        {{>navbar isAdmin=isAdmin cartCnt=cartCnt totalPrice=totalPrice}}
+
+        <div class="container">
+            <div class="productDetails">
+                {{>cartProducts products=products totalPrice=totalPrice}}
+            </div>
         </div>
+
+        <div class="push"></div> <!-- to push footer to bottom -->
     </div>
-    <button class="logoutBtn">
-        <a href="/logout">Logout</a>
-    </button>
 
     <div class="footerPartial">
         {{>footer}}
