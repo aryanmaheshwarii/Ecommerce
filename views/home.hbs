@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/footer.css">
 </head>
+
 <body>
-    {{> navbar isAdmin=isAdmin cartCnt=cartCnt }}
+    {{> navbar isAdmin=isAdmin cartCnt=cartCnt products=products}}
     <div class="container">
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -58,45 +61,46 @@
             <div class="swiper-button-prev"></div>
         </div>
 
-        <div class="sections">
-            <div class="section section-1">
-                <h3>CATEGORY</h3>
-                <div class="clothes">
-                    <div class="cloth">
-                        <img src="/images/icons/dress.svg" alt="">
-                        <span>clothes</span>
-                    </div>
-                    <div class="add">➕</div>
-                </div>
 
-                <div class="clothes">
-                    <div class="cloth">
-                        <img src="/images/icons/shoes.svg" alt="">
-                        <span>Footwear</span>
-                    </div>
-                    <div class="add">➕</div>
+        <div class="productDetails">
+            {{#each this.products as |product|}}
+            <div class="productItem">
+                <div class="productImg">
+                    <img src="{{product.imageUrl}}" alt="">
                 </div>
-
-                <div class="clothes">
-                    <div class="cloth">
-                        <img src="/images/icons/jewelry.svg" alt="">
-                        <span>Jewelry</span>
+                <div class="info">
+                    <div class="productInfo">
+                        <h2 class="name">
+                            {{product.name}}
+                        </h2>
                     </div>
-                    <div class="add">➕</div>
+                    <div class="priceInfo">
+                        <div class="price">
+                            $ {{product.price}}
+                        </div>
+                        <div class="btnGrp">
+                            <button class="btn">
+                                <a href="/shop/details?id={{product._id}}">Product Details</a>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="section section-2">
-
-            </div>
+            {{/each}}
         </div>
 
         <button class="logoutBtn">
             <a href="/logout">Logout</a>
         </button>
+
+    </div>
+
+    <div class="footerPartial">
+        {{>footer}}
     </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/js/home.js"></script>
 </body>
+
 </html>

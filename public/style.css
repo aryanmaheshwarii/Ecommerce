@@ -23,7 +23,7 @@
     font-weight: 700;
     font-size: 17px;
     overflow: hidden;
-    z-index: 10;
+    z-index: 15;
 }
 
 .navItem img {
@@ -64,9 +64,10 @@
     font-size: 18px;
     font-weight: 400;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 110px;
     /* border: 2px solid green; */
     width: 85%;
+    /* margin-bottom: 30px; */
 }
 
 .logoutBtn{
@@ -78,7 +79,7 @@
     font-size: 15px;
     border: 2px solid rgb(15, 14, 14);
     box-shadow: 3px 3px 5px rgb(161, 134, 235);
-    z-index: 10;
+    z-index: 15;
 }
 
 .logoutBtn a{
