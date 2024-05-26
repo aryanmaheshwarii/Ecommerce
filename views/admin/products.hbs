@@ -12,18 +12,22 @@
 
 <body>
     {{>navbar isAdmin=isAdmin cartCnt=cartCnt}}
-    <div class="container">
-        <div class="productDetails">
-            {{>adminProducts products=products}}
+    
+    <div class="content">
+        <div class="container">
+            <div class="productDetails">
+                {{>adminProducts products=products}}
+            </div>
         </div>
+        <button class="logoutBtn">
+            <a href="/logout">Logout</a>
+        </button>
     </div>
-    <button class="logoutBtn">
-        <a href="/logout">Logout</a>
-    </button>
 
     <div class="footerPartial">
         {{>footer}}
     </div>
 </body>
+
 
 </html>

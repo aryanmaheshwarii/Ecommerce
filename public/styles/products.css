@@ -125,3 +125,23 @@ ul li{
     z-index: 999; /* Ensure popup is on top of other elements */
     text-align: center;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.footerPartial {
+    margin-top: auto;
+}

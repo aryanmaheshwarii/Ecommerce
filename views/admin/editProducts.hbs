@@ -13,28 +13,40 @@
 <body>
     {{>navbar isAdmin=isAdmin cartCnt=cartCnt}}
 
-    <div class="container">
-        <div class="background">
-            <div class="shape"></div>
-            <div class="shape"></div>
+    <div class="content">
+        <div class="container">
+
+            <div class="background">
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+
+            <form action="/admin/edit?id={{product.id}}" method="POST">
+                <h3>Edit-Product Here</h3>
+                <label for="name">Name:</label>
+                <input value="{{product.name}}" type="text" name="name" class="name"> <br>
+                <label for="price">Price:</label>
+                <input value="{{product.price}}" type="text" name="price" class="price"> <br>
+                <label for="imageUrl">Image-Url:</label>
+                <input value="{{product.imageUrl}}" type="text" name="imageUrl" class="imageUrl"> <br>
+                <label for="description">Description:</label>
+                <textarea name="description" id="description" class="description" rows="5"
+                    cols="122">{{product.description}}</textarea>
+                <button class="addBtn" type="submit">Edit Product</button>
+            </form>
+
         </div>
-        <form action="/admin/edit?id={{product.id}}" method="POST">
-            <h3>Edit-Product Here</h3>
-            <label for="name">Name:</label>
-            <input value="{{product.name}}" type="text" name="name" class="name"> <br>
-            <label for="price">Price:</label>
-            <input value="{{product.price}}" type="text" name="price" class="price"> <br>
-            <label for="imageUrl">Image-Url:</label>
-            <input value="{{product.imageUrl}}" type="text" name="imageUrl" class="imageUrl"> <br>
-            <label for="description">Description:</label>
-            <textarea name="description" id="description" rows="5" cols="122">{{product.description}}</textarea>
-            <button class="addBtn" type="submit">Edit Product</button>
-        </form>
+
+        <button class="logoutBtn">
+            <a href="/logout">Logout</a>
+        </button>
+
     </div>
 
-    <button class="logoutBtn">
-        <a href="/logout">Logout</a>
-    </button>
+    <div class="footerPartial">
+        {{>footer}}
+    </div>
 </body>
+
 
 </html>
