@@ -192,7 +192,11 @@ module.exports.getSearch = async (req, res, next) => {
         const results = await Product.find({ name: { $regex: query, $options: 'i' } });
         console.log(results)
         // Render search results page using Handlebars template
-        res.render('shop/searchResults', { products: results }); // Assuming you have a searchResults.hbs template
+        res.render('shop/searchResults', { 
+            products: results ,
+            isAdmin: req.user.isAdmin,
+            cartCnt: req.user.cart.products.length
+        }); // Assuming you have a searchResults.hbs template
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');

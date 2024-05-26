@@ -22,7 +22,8 @@ module.exports.getWomenSale = async (req, res, next) => {
         console.log(products)
         res.render('shop/carousel', {
             products,
-            isAdmin: req.user.isAdmin
+            isAdmin: req.user.isAdmin,
+            cartCnt: req.user.cart.products.length
         });
     }
 
@@ -38,7 +39,8 @@ module.exports.getGlasses = async (req, res, next) => {
         console.log(products)
         res.render('shop/carousel', {
             products,
-            isAdmin: req.user.isAdmin
+            isAdmin: req.user.isAdmin,
+            cartCnt: req.user.cart.products.length
         });
     }
 
@@ -57,7 +59,8 @@ module.exports.getSummerSale = async (req, res, next) => {
         console.log(products)
         res.render('shop/carousel', {
             products,
-            isAdmin: req.user.isAdmin
+            isAdmin: req.user.isAdmin,
+            cartCnt: req.user.cart.products.length
         });
     }
 
