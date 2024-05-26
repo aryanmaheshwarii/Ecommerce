@@ -12,26 +12,30 @@
 
 <body>
     {{>navbar isAdmin=isAdmin cartCnt=cartCnt}}
-    <div class="container">
-        <form action="/admin/add-product" method="POST">
-            <h3>Add-Product Here</h3>
-            <label for="name">Name:</label>
-            <input type="text" name="name" placeholder="Enter Product Name" class="name"> <br>
-            <label for="price">Price:</label>
-            <input type="text" name="price" placeholder="Enter Product Price" class="price"> <br>
-            <label for="imageUrl">Image-Url:</label>
-            <input type="text" name="imageUrl" placeholder="Enter Product Image-Url" class="imageUrl"> <br>
-            <label for="description">Description:</label>
-            <textarea name="description" id="description" rows="5" cols="123">...Enter Product Description</textarea>
-            <button class="addBtn" type="submit">Add Product</button>
-        </form>
+    <div class="content">
+        <div class="container">
+            <form action="/admin/add-product" method="POST">
+                <h3>Add-Product Here</h3>
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="Enter Product Name" class="name"> <br>
+                <label for="price">Price:</label>
+                <input type="text" name="price" placeholder="Enter Product Price" class="price"> <br>
+                <label for="imageUrl">Image-Url:</label>
+                <input type="text" name="imageUrl" placeholder="Enter Product Image-Url" class="imageUrl"> <br>
+                <label for="description">Description:</label>
+                <textarea name="description" id="description" class="description" rows="5"
+                    cols="123">...Enter Product Description</textarea>
+                <button class="addBtn" type="submit">Add Product</button>
+            </form>
+        </div>
+        <button class="logoutBtn">
+            <a href="/logout">Logout</a>
+        </button>
     </div>
-    <button class="logoutBtn">
-        <a href="/logout">Logout</a>
-    </button>
     <div class="footerPartial">
         {{>footer}}
     </div>
 </body>
+
 
 </html>

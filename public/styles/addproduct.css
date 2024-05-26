@@ -78,3 +78,29 @@ button a{
 .navItem-2 form{
     display: none;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+.footerPartial {
+    flex-shrink: 0;
+}
+
+.description{
+    width: 100%;
+}
+
+
