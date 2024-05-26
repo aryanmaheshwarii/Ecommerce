@@ -17,15 +17,51 @@ module.exports.getHome = async (req, res, next) => {
 
 module.exports.getWomenSale = async (req, res, next) => {
     // res.send('ok');
-    try{
-        let products = await Product.find({ name: { $regex: 'women', $options: 'i' } })
+    try {
+        let products = await Product.find({ name: { $regex: 'women', $options: 'i' } }).sort({ price: 1 });
         console.log(products)
         res.render('shop/carousel', {
-            products
+            products,
+            isAdmin: req.user.isAdmin
         });
     }
 
-    catch(err){
+    catch (err) {
+        console.log(err);
+    }
+}
+
+module.exports.getGlasses = async (req, res, next) => {
+    // res.send('ok');
+    try {
+        let products = await Product.find({ name: { $regex: 'sunglasses', $options: 'i' } }).sort({ price: 1 });
+        console.log(products)
+        res.render('shop/carousel', {
+            products,
+            isAdmin: req.user.isAdmin
+        });
+    }
+
+    catch (err) {
+        console.log(err);
+    }
+}
+
+module.exports.getSummerSale = async (req, res, next) => {
+    // res.send('ok');
+    try {
+        let products = await Product.find({
+            // name: { $regex: 'sunglasses', $options: 'i' },
+            price: { $gte: 30, $lte: 60 }
+        }).sort({ price: 1 }); // Ascending order
+        console.log(products)
+        res.render('shop/carousel', {
+            products,
+            isAdmin: req.user.isAdmin
+        });
+    }
+
+    catch (err) {
         console.log(err);
     }
 }

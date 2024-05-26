@@ -8,4 +8,8 @@ router.get('/', homeController.getHome);
 
 router.get('/women-sale', homeController.getWomenSale);
 
+router.get('/sunglasses', homeController.getGlasses);
+
+router.get('/summer-sale', homeController.getSummerSale);
+
 module.exports = router;
