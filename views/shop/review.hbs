@@ -14,6 +14,7 @@
 <body>
     {{>navbar isAdmin=isAdmin cartCnt=cartCnt}}
     <div class="container">
+        {{!-- {{product}} --}}
         <div class="productDetails">
             <div class="productItem">
                 <div class="productImg">
@@ -32,24 +33,17 @@
                         <div class="price">
                             $ {{product.price}}
                         </div>
-                        <div class="btnGrp">
-                            <button class="btn">
-                                <a href="/shop/buy-now?id={{product._id}}">Buy Now</a>
-                            </button>
-
-                            <button productId="{{product._id}}" class="btn addToCartBtn">
-                                {{!-- <a href="#">Add To Cart</a> --}}
-                                Add To Cart
-                            </button>
-
-                            <button class="btn">
-                                <a href="/shop/addReview?id={{product._id}}">Add a review</a>
-                            </button>
-
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="reviewForm">
+            <form action="/shop/addReview" method="POST">
+                <input type="hidden" name="productID" value="{{product._id}}">
+                <input type="text" placeholder="Add Review" name="review">
+                <button type="submit">Daaldo Review</button>
+            </form>
+
         </div>
     </div>
     <button class="logoutBtn">

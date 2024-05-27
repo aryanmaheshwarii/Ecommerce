@@ -14,5 +14,8 @@ router.get('/increaseQty', productController.getIncQty);
 router.get('/decreaseQty', productController.getDecQty);
 router.get('/delete', productController.getDelete);
 router.get('/search', productController.getSearch);
+router.get('/addReview', productController.getAddReview);
+router.post('/addReview', productController.postAddReview);
+
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const { isAdmin } = require("../../middlewares/admin");
 const Product = require("../../model/product");
+const Review = require("../../model/reviews");
 
 module.exports.getProducts = async (req, res, next) => {
     try {
@@ -15,6 +16,8 @@ module.exports.getProducts = async (req, res, next) => {
         next(err)
     }
 }
+
+
 
 module.exports.getBuyProducts = async (req, res, next) => {
     const { id } = req.query;
@@ -200,5 +203,55 @@ module.exports.getSearch = async (req, res, next) => {
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
+    }
+}
+
+
+module.exports.getAddReview = async (req, res, next) => {
+    const {id} = req.query;
+    console.log(id)
+    try{
+        let product = await Product.find({
+            _id : id
+        })
+        product = product[0];
+        res.render('shop/review',{product})
+    }
+    catch(err){
+        console.log(err);
+    }
+    
+
+    // try {
+    //     let newReview = await Review.find({
+    //         product_id : id
+    //     })
+    // } 
+    // catch (err) {
+    //     next(err)
+    // }
+
+}
+
+
+module.exports.postAddReview = async (req, res, next) => {
+    const{productID, review} = req.body;
+    let user = req.user;
+    console.log(user)
+    console.log(productID)
+    console.log(review)
+    let product = await Product.findOne({_id: productID})
+    try{
+        let newReview = await Review.create({
+            product_id:productID,
+            user_id:user,
+            review:review
+        })
+        console.log(newReview)
+        res.redirect(`/shop/addReview?id=${productID}`)
+    }
+
+    catch(err){
+
     }
 }
