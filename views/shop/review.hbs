@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/styles/products.css">
     <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/review.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
@@ -15,6 +16,7 @@
     {{>navbar isAdmin=isAdmin cartCnt=cartCnt}}
     <div class="container">
         {{!-- {{product}} --}}
+        {{!-- {{productReviews}} --}}
         <div class="productDetails">
             <div class="productItem">
                 <div class="productImg">
@@ -37,11 +39,28 @@
                 </div>
             </div>
         </div>
+        <div id="reviews-container">
+            <h1>Product Reviews</h1>
+            {{#each productReviews as |p|}}
+            <div class="review">
+                {{!-- <img class="user-img" src="{{p.user_id.google_img}}" alt=""> --}}
+                <div class="user-details">
+                    <p>{{p.user_id.email}}</p>
+                    <p class="timestamp">{{p.createdAt}}</p>
+                    <p>{{p.review}}</p>
+                    {{!-- <p>{{p.post_id}}</p> --}}
+
+                </div>
+
+
+            </div>
+            {{/each}}
+        </div>
         <div class="reviewForm">
             <form action="/shop/addReview" method="POST">
                 <input type="hidden" name="productID" value="{{product._id}}">
                 <input type="text" placeholder="Add Review" name="review">
-                <button type="submit">Daaldo Review</button>
+                <button type="submit" class="reviewBtn">Daaldo Review</button>
             </form>
 
         </div>
@@ -54,7 +73,7 @@
         {{>footer}}
     </div>
 
-    <script src="/js/addToCartjs.js"></script>
+    {{!-- <script src="/js/addToCartjs.js"></script> --}}
 </body>
 
 </html>

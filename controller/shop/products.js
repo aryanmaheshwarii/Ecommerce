@@ -1,5 +1,6 @@
 const { isAdmin } = require("../../middlewares/admin");
 const Product = require("../../model/product");
+// const reviews = require("../../model/reviews");
 const Review = require("../../model/reviews");
 
 module.exports.getProducts = async (req, res, next) => {
@@ -215,7 +216,10 @@ module.exports.getAddReview = async (req, res, next) => {
             _id : id
         })
         product = product[0];
-        res.render('shop/review',{product})
+
+        let productReviews = await Review.find({product_id:id}).populate('user_id');
+        console.log("productReviews::",productReviews)
+        res.render('shop/review',{product,productReviews})
     }
     catch(err){
         console.log(err);
