@@ -224,16 +224,6 @@ module.exports.getAddReview = async (req, res, next) => {
     catch(err){
         console.log(err);
     }
-    
-
-    // try {
-    //     let newReview = await Review.find({
-    //         product_id : id
-    //     })
-    // } 
-    // catch (err) {
-    //     next(err)
-    // }
 
 }
 

@@ -176,10 +176,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         margin-top: 86px;
         transform: translateX(0); /* Slide in from the left */
         transition: 0.2s; /* Transition for sliding effect */
         position: relative;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .mobile-styles .navLink , .mobile-styles .loggedOut{
