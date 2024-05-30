@@ -11,7 +11,7 @@
 .navBar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border: 1px solid black;
     background-color: rgb(56, 12, 97);
     color: white;
@@ -30,7 +30,8 @@
 
 .navItem img {
     height: 55px;
-    background-color: rgb(56, 12, 97);;
+    background-color: rgb(56, 12, 97);
+    ;
     margin-right: 15px;
     border-radius: 50%;
 }
@@ -72,7 +73,7 @@
     /* margin-bottom: 30px; */
 }
 
-.logoutBtn{
+.logoutBtn {
     position: fixed;
     right: 20px;
     padding: 5px 12px;
@@ -84,15 +85,15 @@
     z-index: 15;
 }
 
-.logoutBtn a{
+.logoutBtn a {
     text-decoration: none;
 }
 
-.cartName{
+.cartName {
     position: relative;
 }
 
-.cartCnt{
+.cartCnt {
     position: absolute;
     top: -11px;
     right: -11px;
@@ -103,7 +104,7 @@
     border-radius: 50%;
 }
 
-.navItem-2 form{
+.navItem-2 form {
     width: 80%;
     display: flex;
     align-items: center;
@@ -111,12 +112,12 @@
     position: relative;
 }
 
-.navItem-2 form input{
+.navItem-2 form input {
     width: 90%;
     border: none;
 }
 
-.navItem-2 form button{
+.navItem-2 form button {
     width: 4%;
     border-radius: 50%;
     border: none;
@@ -125,3 +126,89 @@
     right: 30px;
 }
 
+.bars {
+    display: none;
+}
+
+.for-mobile {
+    display: none;
+}
+
+/* itni ya isse choti */
+@media screen and (max-width:1420px) {
+    .navItem-2 {
+        width: 40%;
+    }
+
+    .navItem-1 {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:1075px) {
+    .navLink {
+        display: none;
+    }
+
+    .navItem-1 {
+        width: 15%;
+    }
+
+    .navItem-2 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .logoutBtn {
+        display: none;
+    }
+
+    .bars {
+        display: block !important;
+        color: white;
+        cursor: pointer;
+    }
+
+    .mobile-styles {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 86px;
+        transform: translateX(0); /* Slide in from the left */
+        transition: 0.2s; /* Transition for sliding effect */
+        position: relative;
+    }
+
+    .mobile-styles .navLink , .mobile-styles .loggedOut{
+        color: white;
+        display: block !important;
+        font-size: 20px;
+        margin: 8px auto 8px auto;
+        text-align: center;
+        width: 80%;
+        border-radius: 10px;
+        padding: 8px;
+        background-color: rgb(56, 12, 97);
+        border: none;
+        box-shadow: none;
+        font-weight: 700;
+    }
+
+    .logoutBtn a{
+        color: white;
+    }
+
+    /* .mobile-styles .logoutBtn{
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+        z-index: 0;
+        top: 100%;
+        height: 45px;
+        margin: 10px auto 0 auto;
+    } */
+
+}

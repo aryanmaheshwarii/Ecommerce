@@ -21,7 +21,7 @@ module.exports.getProducts = async (req, res, next) => {
 
 module.exports.getBuyProducts = async (req, res, next) => {
     const { id } = req.query;
-    console.log(id);
+    // console.log(id);
     try {
         let product = await Product.find({
             _id: id
@@ -40,7 +40,7 @@ module.exports.getBuyProducts = async (req, res, next) => {
 
 module.exports.getAddToCart = async (req, res, next) => {
     const { productId } = req.query;
-    console.log(productId);
+    // console.log(productId);
 
     req.user.addToCart(productId) // this addToCart function will make inside the user schema.
         .then((result) => {
@@ -53,7 +53,7 @@ module.exports.getAddToCart = async (req, res, next) => {
 
 module.exports.getDetails = async (req, res, next) => {
     const { id } = req.query;
-    console.log(id);
+    // console.log(id);
     try {
         let product = await Product.find({
             _id: id
@@ -73,7 +73,7 @@ module.exports.getDetails = async (req, res, next) => {
 module.exports.getCart = async (req, res, next) => {
     req.user.populate('cart.products.id')
         .then((user) => {
-            console.log(user.cart.products);
+            // console.log(user.cart.products);
             let products = user.cart.products;
             let totalPrice = 0;
             products.forEach(element => {
@@ -127,7 +127,7 @@ module.exports.getDecQty = async (req, res, next) => {
     let userId = req.user._id;
     req.user.populate('cart.products.id') // isse user ka cart aa jayega mere pass.
         .then(async (user) => {
-            console.log(user.cart.products);
+            // console.log(user.cart.products);
             let products = user.cart.products;
             let totalPrice = 0;
             products.forEach(element => {
@@ -160,7 +160,7 @@ module.exports.getDelete = async (req, res, next) => {
     let userId = req.user._id;
     req.user.populate('cart.products.id') // isse user ka cart aa jayega mere pass.
         .then(async (user) => {
-            console.log(user.cart.products);
+            // console.log(user.cart.products);
             let products = user.cart.products;
             let totalPrice = 0;
             let newProducts = products.filter(element => {
@@ -189,7 +189,7 @@ module.exports.getDelete = async (req, res, next) => {
 module.exports.getSearch = async (req, res, next) => {
     console.log("checking")
     const query = req.query.query;
-    console.log(query)
+    // console.log(query)
     try {
         // Perform search in MongoDB
         const results = await Product.find({ name: { $regex: query, $options: 'i' } });
@@ -209,7 +209,7 @@ module.exports.getSearch = async (req, res, next) => {
 
 module.exports.getAddReview = async (req, res, next) => {
     const {id} = req.query;
-    console.log(id)
+    // console.log(id)
     try{
         let product = await Product.find({
             _id : id

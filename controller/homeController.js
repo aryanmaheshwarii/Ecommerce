@@ -3,7 +3,7 @@ const Product = require("../model/product");
 module.exports.getHome = async (req, res, next) => {
     try {
         let products = await Product.find({}).limit(9);
-        console.log(products);
+        // console.log(products);
         res.render('home', {
             email: req.user.email,
             isAdmin: req.user.isAdmin,
