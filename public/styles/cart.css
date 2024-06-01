@@ -130,3 +130,37 @@ html, body {
 .footerPartial {
     flex-shrink: 0; /* do not shrink the footer */
 }
+
+@media screen and (max-width:1030px) {
+    .cartItem{
+        flex-direction: column;
+        width: 100% !important;
+    }
+
+    .newCartItem{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .itemDetails{
+        display: flex;
+        flex-direction: column !important;
+        line-height: 25px;
+    }
+
+    .cartItemDesc{
+        width: 100%;
+    }
+
+    .btnGrp1{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btnGrp1 .payment, .btnGrp1 .total{
+        width: 70%;
+    }
+
+
+}
