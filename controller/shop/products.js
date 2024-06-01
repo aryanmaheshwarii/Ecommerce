@@ -219,7 +219,11 @@ module.exports.getAddReview = async (req, res, next) => {
 
         let productReviews = await Review.find({product_id:id}).populate('user_id');
         console.log("productReviews::",productReviews)
-        res.render('shop/review',{product,productReviews})
+        res.render('shop/review',{product,
+            productReviews,
+            isAdmin: req.user.isAdmin,
+            cartCnt: req.user.cart.products.length
+        })
     }
     catch(err){
         console.log(err);
