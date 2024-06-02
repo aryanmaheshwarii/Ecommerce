@@ -90,15 +90,20 @@ ul li{
     margin-top: 30px;
 }
 
-.btnGrp .btn{
-    padding: 8px 5px;
+.btn{
+    padding: 8px 8px;
     background-color: rgb(73, 16, 126);
     cursor: pointer;
     border: none;
     border-radius: 8px;
 }
 
-.btnGrp .btn a,
+.btnn{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn a,
 .addToCartBtn{
     color: white;
     text-decoration: none;
@@ -169,5 +174,34 @@ html, body {
 
     .priceInfo .price{
         font-size: 23px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .info{
+        flex-direction: column;
+    }
+
+    .info .productInfo{
+        width: 90%;
+    }
+
+    .info .priceInfo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* border: 1px solid black; */
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .priceInfo .btn{
+        display: inline !important;
+        margin: auto 2px auto 2px;
+    }
+
+    .btnn{
+        width: 60%;
     }
 }
